@@ -1,34 +1,34 @@
 # technical-interview
 
-API de chat com FastAPI e um agente LangChain. O agente responde perguntas sobre a BEON.tech usando documentos indexados em memória.
+Chat API built with FastAPI and a LangChain agent. The agent answers questions about BEON.tech using documents indexed in memory.
 
-## Requisitos
+## Requirements
 
 - Python 3.12+
 - [uv](https://docs.astral.sh/uv/)
 
-## Configuração
+## Setup
 
 ```bash
 uv sync
 ```
 
-Crie um arquivo `.env` na raiz do projeto:
+Create a `.env` file in the project root:
 
 ```bash
 GOOGLE_API_KEY=...
 ANTHROPIC_API_KEY=...
 ```
 
-`GOOGLE_API_KEY` é usada pelo modelo de embedding `gemini-embedding-2`. `ANTHROPIC_API_KEY` é usada pelo `claude-haiku-4-5`.
+`GOOGLE_API_KEY` is used by the `gemini-embedding-2` embedding model. `ANTHROPIC_API_KEY` is used by `claude-haiku-4-5`.
 
-## Subir o servidor
+## Start the server
 
 ```bash
 uv run fastapi dev
 ```
 
-A API fica em http://localhost:8000. A documentação interativa fica em http://localhost:8000/docs.
+The API is available at http://localhost:8000. Interactive docs are at http://localhost:8000/docs.
 
 ## Endpoint
 
@@ -40,13 +40,13 @@ curl -X POST http://localhost:8000/chat \
   -d "{\"message\": \"What does BEON.tech do?\"}"
 ```
 
-Resposta:
+Response:
 
 ```json
 {"message": "..."}
 ```
 
-## Estrutura
+## Structure
 
-- `main.py` — aplicação FastAPI, agente e busca nos documentos
-- `pyproject.toml` — dependências do projeto
+- `main.py` — FastAPI application, agent, and document search
+- `pyproject.toml` — project dependencies
