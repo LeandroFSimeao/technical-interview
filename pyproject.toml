@@ -1,0 +1,11 @@
+[project]
+name = "technical-interview"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.142.2",
+    "langchain>=1.4.3",
+    "langchain-anthropic>=1.7.5",
+    "langchain-google-genai>=4.4.0",
+    "numpy>=2.5.3",
+]
